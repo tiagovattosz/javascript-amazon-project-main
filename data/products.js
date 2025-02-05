@@ -469,4 +469,26 @@ const products = [
     priceCents: 2400,
     keywords: ["sweaters", "hoodies", "apparel", "mens"],
   },
+  {
+    id: "id1",
+    image: "images/products/backpack.jpg",
+    name: "Black Backpack for Students",
+    rating: {
+      stars: 3,
+      count: 966,
+    },
+    priceCents: 990,
+    keywords: ["sports", "mens"],
+  },
+  {
+    id: "id2",
+    image: "images/products/umbrella.jpg",
+    name: "Big Umbrella for Ladies and Gentlemen",
+    rating: {
+      stars: 5,
+      count: 3,
+    },
+    priceCents: 5900,
+    keywords: ["comfort", "womens"],
+  },
 ];
