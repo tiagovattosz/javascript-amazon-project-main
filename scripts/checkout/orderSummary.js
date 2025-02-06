@@ -9,8 +9,10 @@ import { products, getProduct } from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
+import { isWeekend as isSatSun } from "../utils/date.js";
 
 export function renderOrderSummary() {
+
   function updateCartQuantity() {
     const cartQuantity = calculateCartQuantity();
     document.querySelector(
@@ -118,11 +120,8 @@ export function renderOrderSummary() {
     link.addEventListener("click", () => {
       const { productId } = link.dataset;
       removeFromCart(productId);
-      const containerElement = document.querySelector(
-        `.js-cart-item-container-${productId}`
-      );
-      containerElement.remove();
       updateCartQuantity();
+      renderOrderSummary();
       renderPaymentSummary();
     });
   });
